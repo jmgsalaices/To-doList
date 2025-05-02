@@ -58,9 +58,21 @@ namespace To_doList.Models
     }
     public enum TaskImportance
     { 
+        /// <summary>
+        /// THe task is low level performance
+        /// </summary>
         Low,
+        /// <summary>
+        /// The task is medium level importance
+        /// </summary>
         Medium,
+        /// <summary>
+        /// The task is high Level importnace
+        /// </summary>
         High,
+        /// <summary>
+        /// The task is critical concern importance
+        /// </summary>
         Critical
     }
 }
