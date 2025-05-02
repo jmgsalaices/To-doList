@@ -5,7 +5,7 @@
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary.MergedDictionaries> 
                 <ResourceDictionary Source="/Dictionaries/Colours.xaml" />
                 <ResourceDictionary Source="/Dictionaries/Icons.xaml" />
                 <ResourceDictionary Source="/Dictionaries/Styles.xaml" />
