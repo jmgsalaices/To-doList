@@ -14,7 +14,7 @@
     <!--on Accent-->
     <SolidColorBrush x:Key="OnAccent" Color="#FFFFFFFF" />
     <!--Placeholder Text Coler-->
-    <SolidColorBrush x:Key="PlaceholderText" Color="#FFFFFFFF" />   
+    <SolidColorBrush x:Key="PlaceholderText" Color="#FF474747" />   
     <!--Accent Dark Over-->
     <SolidColorBrush x:Key="AccentDarkOver" Color="#FF164863" />
     <!--Accent Dark click-->
