@@ -106,6 +106,27 @@
                     <RowDefinition Height="30" />
                 </Grid.RowDefinitions>
 
+                <Grid Grid.Row="1"
+                      Margin="0 20 0 0"
+                      >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="1" />
+                    </Grid.RowDefinitions>
+                   <!--List Title-->
+                    <TextBlock Style="{StaticResource Title}"
+                               Text="Task Check List"
+                               VerticalAlignment="Center"
+                               Margin="20 0 0 0" />
+                    <!--Check list-->
+                    <ListView 
+                        BorderBrush="Transparent"
+                        BorderThickness="0">
+                        
+                    </ListView>
+                </Grid>
+
                 <TextBlock Text="Task Title" 
                   Style="{StaticResource Title}"
                   VerticalAlignment="Center"   />
@@ -143,6 +164,24 @@
                            />
 
             </Grid>
+            <!---Task View Buttons-->
+            <Grid Grid.Row="2"> 
+                <Button Style="{StaticResource TaskViewDeleteButton}"
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Center"
+                        Content="Delete"
+                        Margin="20 0 0 0"/>
+                <Button Style="{StaticResource TaskViewEditButton}"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Content="Edit"/>
+                <Button Style="{StaticResource TaskViewCompleteButton}" 
+                        HorizontalAlignment="Right" 
+                        VerticalAlignment="Center"
+                        Content="Complete"
+                        Margin="0 0 20 0"/>
+                
+            </Grid>
         </Grid>
      
     
@@ -151,4 +190,4 @@
                    Grid.Column="1" Grid.RowSpan="2" Margin="0,-8,0,8"/>
 
     </Grid>
-</Window>
+</Window>   

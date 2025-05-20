@@ -11,12 +11,27 @@
     <SolidColorBrush x:Key="TaskStatusBackground" Color="#FFF6F6F6" />
     <!--Defaul tText-->
     <SolidColorBrush x:Key="DefaultText" Color="#FF474747" />
-    <!--on Accent-->
+    <!--on Accent-->    
     <SolidColorBrush x:Key="OnAccent" Color="#FFFFFFFF" />
     <!--Placeholder Text Coler-->
-    <SolidColorBrush x:Key="PlaceholderText" Color="#FF474747" />   
+    <SolidColorBrush x:Key="PlaceholderText" Color="#FF474747" />
+
+    <!--Buttons-->
+    <SolidColorBrush x:Key="Button.Complete" Color="#FF57B186" />
+    <SolidColorBrush x:Key="Button.Complete.Over" Color="#FF4B886B" />
+    <SolidColorBrush x:Key="Button.Complete.Click" Color="#FF9FD4BB" />
+    
+    <SolidColorBrush x:Key="Button.Edit" Color="#FF848484" />
+    <SolidColorBrush x:Key="Button.Edit.Over" Color="#FF676767" />
+    <SolidColorBrush x:Key="Button.Edit.Click" Color="#FFBDBDBD" />
+    
+    <SolidColorBrush x:Key="Button.Delete" Color="#FFCA2C2C" />
+    <SolidColorBrush x:Key="Button.Delete.Over" Color="#FFCA2C2C" />
+    <SolidColorBrush x:Key="Button.Delete.Click" Color="#FFCA2C2C" />
+
     <!--Accent Dark Over-->
     <SolidColorBrush x:Key="AccentDarkOver" Color="#FF164863" />
+        
     <!--Accent Dark click-->
     <SolidColorBrush x:Key="AccentDarkClick" Color="#FF164863" />
 
