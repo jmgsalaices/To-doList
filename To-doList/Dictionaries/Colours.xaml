@@ -26,7 +26,7 @@
     <SolidColorBrush x:Key="Button.Edit.Click" Color="#FFBDBDBD" />
     
     <SolidColorBrush x:Key="Button.Delete" Color="#FFCA2C2C" />
-    <SolidColorBrush x:Key="Button.Delete.Over" Color="#FFCA2C2C" />
+    <SolidColorBrush x:Key="Button.Delete.Over" Color="#FFB46161" />
     <SolidColorBrush x:Key="Button.Delete.Click" Color="#FFCA2C2C" />
 
     <!--Accent Dark Over-->
