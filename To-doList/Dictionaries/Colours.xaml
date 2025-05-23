@@ -52,4 +52,13 @@
     <SolidColorBrush x:Key="Arcgived" Color="#FFC8A36C" />
     <SolidColorBrush x:Key="Deleted" Color="#FF686060" />
 
+    <SolidColorBrush x:Key="Nav.Default" Color="Transparent" />
+    <SolidColorBrush x:Key="Nav.Over" Color="#FF3964B4" />
+    <SolidColorBrush x:Key="Nav.Click" Color="#FF87B7D8" />
+    
+    
+    
+
+
+
 </ResourceDictionary>   
