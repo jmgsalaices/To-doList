@@ -5,27 +5,45 @@
     <!--Task List Background-->
     <SolidColorBrush x:Key="TaskListBackground" Color="#FFECECEC"/>
     <!--Task View Background-->
-    <SolidColorBrush x:Key="WindowBackground" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="Wind
+                     owBackground" Color="#FFFFFFFF" />
     <!--Task Status Background-->
     <SolidColorBrush x:Key="TaskStatusBackground" Color="#FFF6F6F6" />
     <!--Defaul tText-->
     <SolidColorBrush x:Key="DefaultText" Color="#FF474747" />
-    <!--on Accent-->
+    <!--on Accent-->    
     <SolidColorBrush x:Key="OnAccent" Color="#FFFFFFFF" />
+    <!--Placeholder Text Coler-->
+    <SolidColorBrush x:Key="PlaceholderText" Color="#FF474747" />
+
+    <!--Buttons-->
+    <SolidColorBrush x:Key="Button.Complete" Color="#FF57B186" />
+    <SolidColorBrush x:Key="Button.Complete.Over" Color="#FF4B886B" />
+    <SolidColorBrush x:Key="Button.Complete.Click" Color="#FF9FD4BB" />
+    
+    <SolidColorBrush x:Key="Button.Edit" Color="#FF848484" />
+    <SolidColorBrush x:Key="Button.Edit.Over" Color="#FF676767" />
+    <SolidColorBrush x:Key="Button.Edit.Click" Color="#FFBDBDBD" />
+    
+    <SolidColorBrush x:Key="Button.Delete" Color="#FFCA2C2C" />
+    <SolidColorBrush x:Key="Button.Delete.Over" Color="#FFCA2C2C" />
+    <SolidColorBrush x:Key="Button.Delete.Click" Color="#FFCA2C2C" />
+
     <!--Accent Dark Over-->
     <SolidColorBrush x:Key="AccentDarkOver" Color="#FF164863" />
+        
     <!--Accent Dark click-->
     <SolidColorBrush x:Key="AccentDarkClick" Color="#FF164863" />
 
+    <!--Borders-->
+    <SolidColorBrush x:Key="Borders" Color="#FFCCCCCC" />
+
     <!--Importance Colours-->
-   
-    <!--Low Importance  -->
     <SolidColorBrush x:Key="Importance-low" Color="#FF8CAFF4" />
-    <SolidColorBrush x:Key="Importance-med" Color="#FF2AD985" /
+    <SolidColorBrush x:Key="Importance-med" Color="#FF2AD985" />
     <SolidColorBrush x:Key="Importance-high " Color="#FFCA2C2C" />
     <SolidColorBrush x:Key="Importance-crit" Color="#FFF4B30C" />
-    
-    
+
     <!--Task Proegress  --> 
     <SolidColorBrush x:Key="InProgress" Color="#FF518657" />
     <SolidColorBrush x:Key="Completed" Color="#FF4187AC" />
@@ -33,5 +51,9 @@
     <SolidColorBrush x:Key="Late" Color="#FFB46161" />
     <SolidColorBrush x:Key="Arcgived" Color="#FFC8A36C" />
     <SolidColorBrush x:Key="Deleted" Color="#FF686060" />
+
+    <SolidColorBrush x:Key="Nav.Default" Color="Transparent" />
+    <SolidColorBrush x:Key="Nav.Over" Color="#FF3964B4" />
+    <SolidColorBrush x:Key="Nav.Click" Color="#FF87B7D8" />
 
 </ResourceDictionary>   
