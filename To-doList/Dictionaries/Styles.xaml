@@ -61,7 +61,7 @@
         <Setter Property="BorderBrush" Value="{StaticResource Borders}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Padding" Value="20 0 50 0" />
-        <Setter Property="Cursor" Value="IBeam" />
+        <Setter Property="  Cursor" Value="IBeam" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
@@ -184,5 +184,26 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <!--new Text Box-->
+    <Style x:Key="NewTextBox" TargetType="TextBox">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="{StaticResource Borders}" />  
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="20 0 50 0" />
+        <Setter Property="Cursor" Value="None" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                        <!---ScroollBar-->
+                        <ScrollViewer x:Name="PART_ContentHost" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+                    </Border>
+                  
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 
 </ResourceDictionary>              

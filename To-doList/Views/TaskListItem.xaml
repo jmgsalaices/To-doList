@@ -23,7 +23,7 @@
                 Height="23"
                 HorizontalAlignment="Right"
                 Margin="0 0 20 0">
-            <TextBlock Text="" Foreground="{StaticResource PlaceholderText}"
+            <TextBlock Text="" Foreground="{StaticResource PlaceholderBorderText}"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center" />
 

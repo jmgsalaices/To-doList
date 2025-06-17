@@ -4,17 +4,26 @@
     <SolidColorBrush x:Key="AccentDark" Color="#FF164863" />
     <!--Task List Background-->
     <SolidColorBrush x:Key="TaskListBackground" Color="#FFECECEC"/>
+    <!--nEW Task Windows Background-->
+    <SolidColorBrush x:Key="NewTaskWindowBackground" Color="#FFECECEC"/>
+    <!--Task List UCT TaskListUCTitle-->
+    <SolidColorBrush x:Key="TaskListUCTitle" Color="#FF373737"/>
+    <!--Task List UCT TaskListUCTest-->
+    <SolidColorBrush x:Key="TaskListUCTest" Color="#FF373737"/>
     <!--Task View Background-->
-    <SolidColorBrush x:Key="Wind
-                     owBackground" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="WindowBackground" Color="#FFFFFFFF" />
     <!--Task Status Background-->
-    <SolidColorBrush x:Key="TaskStatusBackground" Color="#FFF6F6F6" />
+    <SolidColorBrush x:Key="TaskStatusBackground" Color ="#FFF6F6F6" />
     <!--Defaul tText-->
     <SolidColorBrush x:Key="DefaultText" Color="#FF474747" />
     <!--on Accent-->    
     <SolidColorBrush x:Key="OnAccent" Color="#FFFFFFFF" />
     <!--Placeholder Text Coler-->
     <SolidColorBrush x:Key="PlaceholderText" Color="#FF474747" />
+    <!--Placeholder Text Border-->
+    <SolidColorBrush x:Key="PlaceholderBorder" Color="#FF949494" />
+    <!--Placeholder Text Border Text-->
+    <SolidColorBrush x:Key="PlaceholderBorderText" Color="#FF373737" />
 
     <!--Buttons-->
     <SolidColorBrush x:Key="Button.Complete" Color="#FF57B186" />
@@ -25,11 +34,10 @@
     <SolidColorBrush x:Key="Button.Edit.Over" Color="#FF676767" />
     <SolidColorBrush x:Key="Button.Edit.Click" Color="#FFBDBDBD" />
     
-    <SolidColorBrush x:Key="Button.Delete" Color="#FFCA2C2C" />
+    <SolidColorBrush x:Key="Button.Delete"              Color="#FFCA2C2C" />
     <SolidColorBrush x:Key="Button.Delete.Over" Color="#FFB46161" />
     <SolidColorBrush x:Key="Button.Delete.Click" Color="#FFCA2C2C" />
 
-    <SolidColorBrush x:Key="PlaceholderText" Color="#FFFFFFFF" />   
     <!--Accent Dark Over-->
     <SolidColorBrush x:Key="AccentDarkOver" Color="#FF164863" />
         

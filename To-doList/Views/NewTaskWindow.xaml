@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:To_doList.Views"
         mc:Ignorable="d"
-        Title="NewTaskWindow" Height="450" Width="800"
-        WindowStartupLocation="CenterScreen">
+        Title="NewTaskWindow" Height="800" Width="544"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource NewTaskWindowBackground}">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="200" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
@@ -69,5 +70,23 @@
                 </ControlTemplate>
             </ListView.Template>
         </ListView>
+
+        <StackPanel Grid.Row="4">
+            <StackPanel Orientation="Horizontal"   
+                        Margin="20 5"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left">
+                <TextBlock Text="Due" Margin="0 0 20 0" 
+                           VerticalAlignment="Center" />
+                <DatePicker Margin="0 0 20 0" />
+                <TextBlock Text="@" Margin="0 0 20 0"
+                           VerticalAlignment="Center" />
+                <ComboBox SelectedIndex="0" MinWidth="60" />
+                <TextBlock Text=":" Margin="10 0 10 0"
+                           VerticalAlignment="Center" />
+                <ComboBox SelectedIndex="0" MinWidth="60" />    
+                <TextBlock Text="AM" Margin="5 0 20 0" />
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
