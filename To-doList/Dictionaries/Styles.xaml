@@ -61,7 +61,7 @@
         <Setter Property="BorderBrush" Value="{StaticResource Borders}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Padding" Value="20 0 50 0" />
-        <Setter Property="  Cursor" Value="IBeam" />
+        <Setter Property="Cursor" Value="IBeam" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">

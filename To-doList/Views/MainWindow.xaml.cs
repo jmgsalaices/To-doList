@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using To_doList.ViewModels;
 
 namespace To_doList
 {
@@ -19,10 +20,12 @@ namespace To_doList
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {   
+            
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new TaskViewModel();
         }
     }
 }

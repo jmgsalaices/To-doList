@@ -12,7 +12,7 @@ namespace To_doList.ViewModels
     {
         public readonly Action _execute;
         public readonly Func<bool> _canExecute;
-        public RelayCommand(Action execute, Func<bool> canExecute) 
+        public RelayCommand(Action execute, Func<bool> canExecute = null) 
         {
             _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute;
@@ -38,12 +38,22 @@ namespace To_doList.ViewModels
 
     public class RelayCommand<T> : ICommand
     {
-        public readonly Action _execute;
-        public readonly Func<bool> _canExecute;
-        public RelayCommand(Action execute, Func<bool> canExecute)
+        public readonly Action<T> _execute;
+        public readonly Predicate<T> _canExecute;
+        public RelayCommand(Action<T> execute, Predicate<T> canExecute = null)
         {
             _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute;
+        }
+
+        public bool CanExecute(object parameter)
+        {
+            return _canExecute == null || _canExecute((T)parameter);
+        }
+
+        public void Execute(object parameter)
+        {
+            _execute((T)parameter);
         }
 
         public event EventHandler CanExecuteChanged
@@ -51,16 +61,6 @@ namespace To_doList.ViewModels
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
 
-        }
-
-        public bool CanExecute(object parameter)
-        {
-            return _canExecute == null || _canExecute();
-        }
-
-        public void Execute(object parameter)
-        {
-            _execute();
         }
 
     }

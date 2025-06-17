@@ -29,9 +29,15 @@ namespace To_doList.ViewModels
                 _tasks = value; 
                 OnPropertyChanged(nameof(Tasks));
 
-            }
+            }   
         }
-        
+        /// <summary>
+        /// Contructor for  Tas view model class
+        /// </summary>
+        public TaskViewModel()
+        {
+            _taskDataService = new TaskDataService();
+        }
         /// <summary>
         /// Porpierty changed event
         /// </summary>
@@ -72,13 +78,6 @@ namespace To_doList.ViewModels
             LoadTasks();
         }
 
-        /// <summary>
-        /// Contructor for  Tas view model class
-        /// </summary>
-        TaskViewModel()
-        {
-            _taskDataService = new TaskDataService();   
-        }
         /// <summary>
         /// On propiertyChaged   : this method notify whe values changed over observable collection
         /// </summary>
