@@ -15,24 +15,25 @@
     <Window.Resources>
         <Storyboard x:Key="SlideOnLoad">
             <DoubleAnimation Storyboard.TargetProperty="Opacity"
-                                From="0.0" To="1.0" Duration="0:0:1" >
+                             From="0.0" To="1.0" Duration="0:0:1" >
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
             <ThicknessAnimation Storyboard.TargetProperty="Margin"
                         From="0,100,0,0" To="0,0,0,0" Duration="0:0:1" >
                 <ThicknessAnimation.EasingFunction>
                     <CubicEase EasingMode="EaseOut" />
                 </ThicknessAnimation.EasingFunction>
-
             </ThicknessAnimation>
             </Storyboard>
-        </Window.Resources>
-    <Grid Opacity="1" Margin="0">  
-        <Grid.Triggers>             
+    </Window.Resources>
+    <Grid Opacity="1" Margin="0">
+        <Grid.Triggers>
             <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                <BeginStoryboard Storyboard="{StaticResource SlideOnLoad}" />   
-            </EventTrigger> 
+                <BeginStoryboard Storyboard="{StaticResource SlideOnLoad}" />
+            </EventTrigger>
         </Grid.Triggers>
-      
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80" />
             <ColumnDefinition Width="435" />
@@ -89,8 +90,8 @@
                     VerticalAlignment="Center"
                     Height="40"     
                     Width="40"
-                    Margin="0 0 20 0"
-                    Command="{StaticResource IOpenNewWindow}">
+                    Margin="0 0 20 0"   
+                    Command="{Binding IOpenNewWindow}">
                 <Button.DataContext>
                     <vm:MainWindowViewModel />
                 </Button.DataContext>
@@ -210,8 +211,8 @@
             </Grid>
         </Grid>
      
-            <!---Due Date-->
-            <TextBlock Text="Due: 15/05/2024"
+         <!---Due Date-->
+        <TextBlock Text="Due: 15/05/2024"
                         Background="{StaticResource AccentDark}"
                         Padding="20 3"
                         VerticalAlignment="Center"
@@ -219,28 +220,24 @@
                         Grid.Row="2"
                         Foreground="White" />
 
-           
-            
-            <!---Task View Buttons-->
-            <Grid Grid.Row="2">
-                <Button Style="{StaticResource TaskViewDeleteButton}"
-                        HorizontalAlignment="Left" 
-                        VerticalAlignment="Center"
-                        Content="Delete"
-                        Margin="20 0 0 0"/>
-                <Button Style="{StaticResource TaskViewEditButton}"
-                        HorizontalAlignment="Center" 
-                        VerticalAlignment="Center"  
-                        Content="Edit"/>
-                <Button Style="{StaticResource TaskViewCompleteButton}" 
-                        HorizontalAlignment="Right" 
-                        VerticalAlignment="Center"
+        <!---Task View Buttons-->
+        <Grid Grid.Row="2">
+            <Button Style="{StaticResource TaskViewDeleteButton}"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center"
+                    Content="Delete"
+                    Margin="20 0 0 0"/>
+            <Button Style="{StaticResource TaskViewEditButton}"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"  
+                    Content="Edit"/>
+            <Button Style="{StaticResource TaskViewCompleteButton}" 
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Center"
                         Content="Complete"
                         Margin="0 0 20 0"/>
-
-            </Grid>
-        
-
+        </Grid>
+       
 
         <!--Task stataus bar-->
         <Rectangle Fill="{StaticResource TaskStatusBackground}" 
