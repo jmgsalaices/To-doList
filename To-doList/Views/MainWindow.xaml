@@ -28,12 +28,13 @@
             </ThicknessAnimation>
             </Storyboard>
     </Window.Resources>
+    
     <Grid Opacity="1" Margin="0">
         <Grid.Triggers>
             <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                 <BeginStoryboard Storyboard="{StaticResource SlideOnLoad}" />
             </EventTrigger>
-        </Grid.Triggers>
+        </Grid.Triggers>    
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80" />
             <ColumnDefinition Width="435" />
