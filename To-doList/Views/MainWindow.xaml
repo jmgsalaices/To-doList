@@ -3,33 +3,38 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:To_doList.ViewModels"
         xmlns:local="clr-namespace:To_doList"
         mc:Ignorable="d"
         Title="MainWindow" Height="832" Width="1280"
         MinWidth="1150" MinHeight="450"
         WindowStartupLocation="CenterScreen" >
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
     <Window.Resources>
         <Storyboard x:Key="SlideOnLoad">
-            <DoubleAnimation     Storyboard.TargetProperty="Opacity"
+            <DoubleAnimation Storyboard.TargetProperty="Opacity"
                              From="0.0" To="1.0" Duration="0:0:1" >
-                
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
             <ThicknessAnimation Storyboard.TargetProperty="Margin"
-                     From="0,100,0,0" To="0,0,0,0" Duration="0:0:1" >
+                        From="0,100,0,0" To="0,0,0,0" Duration="0:0:1" >
                 <ThicknessAnimation.EasingFunction>
                     <CubicEase EasingMode="EaseOut" />
                 </ThicknessAnimation.EasingFunction>
-
             </ThicknessAnimation>
-        </Storyboard>
+            </Storyboard>
     </Window.Resources>
-    <Grid Opacity="1" Margin="0">  
+    
+    <Grid Opacity="1" Margin="0">
         <Grid.Triggers>
             <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                <BeginStoryboard Storyboard="{StaticResource SlideOnLoad}" />   
-            </EventTrigger> 
-        </Grid.Triggers>
-      
+                <BeginStoryboard Storyboard="{StaticResource SlideOnLoad}" />
+            </EventTrigger>
+        </Grid.Triggers>    
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80" />
             <ColumnDefinition Width="435" />
@@ -38,6 +43,7 @@
         </Grid.ColumnDefinitions>
 
         <!--Nav panel-->
+        <Rectangle Fill="{StaticResource AccentDark}" Grid.RowSpan="2" />
         <Rectangle Fill="{StaticResource AccentDark}" />
         <StackPanel Margin="10 15 10 10">
             <Button Style="{StaticResource TaskManagerNavButton}">
@@ -61,10 +67,11 @@
 
         <!--Task List background-->
         <Rectangle Fill="{StaticResource TaskListBackground}"
-                   Grid.Column="1"/>
+                   Grid.Column="1" Grid.RowSpan="2"/>
 
-        <!--Task List grid-->
-        <Grid Grid.Column="1" Opacity="1">
+        <!--Task List grid-->   
+        <Grid Grid.Column="1" Margin="0,6,0,-6">
+    
             <Grid.RowDefinitions>
                 <RowDefinition Height="60" />
                 <RowDefinition Height="38" />
@@ -76,20 +83,23 @@
                    Content="Tasks"
                    VerticalAlignment="Center"
                    Padding="20 0 0 0"
-                   IsHitTestVisible="False" />
+                   IsHitTestVisible="False"/>
 
             <!--Add new task Button-->
             <Button Style="{StaticResource RoundAccentButton}"
                     HorizontalAlignment="Right" 
                     VerticalAlignment="Center"
-                    Height="40" 
+                    Height="40"     
                     Width="40"
-                    Margin="0 0 20 0">
-
+                    Margin="0 0 20 0"   
+                    Command="{Binding IOpenNewWindow}">
+                <Button.DataContext>
+                    <vm:MainWindowViewModel />
+                </Button.DataContext>
                 <!--Icon-->
                 <Viewbox Width="16"
                          Height="16">
-                    <Path Data="{StaticResource NewTaskIcon}" Fill="{StaticResource OnAccent}" />
+                    <Path Data="{StaticResource NewTaskIcon}" Fill="{StaticResource OnAccent}" ></Path>
                 </Viewbox>
             </Button>
         
@@ -105,8 +115,7 @@
                    VerticalAlignment="Center"
                    Margin="40 0 0 0" 
                    Foreground="{StaticResource Borders}"
-                   Visibility="{Binding Text.IsEmpty, ElementName=TaskSearhBox, 
-                Converter={StaticResource BooleanToVisibilityConverter}}" />
+                   Visibility="{Binding Text.IsEmpty, ElementName=TaskSearhBox, Converter={StaticResource BooleanToVisibilityConverter}}"/>
 
             <Button Style="{StaticResource SearchButton}"
                     Grid.Row="1"
@@ -147,8 +156,16 @@
                     <RowDefinition Height="30" />
                 </Grid.RowDefinitions>
 
-                <Grid Grid.Row="1"
-                      Margin="0 20 0 0" >
+                <TextBlock Text="Task Title" 
+                  Style="{StaticResource Title}"
+                  VerticalAlignment="Center"   />
+                <!---Iportance Bagde-->
+                <Border HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   Padding="20 5"
+                   CornerRadius="5"
+                   Background="{StaticResource Importance-crit}" />
+                <Grid Grid.Row="1" Margin="0 20 0 0" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50" />
                         <RowDefinition Height="1" />
@@ -175,12 +192,12 @@
                    Padding="20 5"
                    CornerRadius="5"
                    Background="{StaticResource Importance-crit}" Margin="497,0,0,0">
-                    <TextBlock Text="Critical"
-                      Foreground="Black"    
-                      FontWeight="Normal"
-                      FontSize="16">
+                        <TextBlock Text="Critical"
+                          Foreground="Black"    
+                          FontWeight="Normal"
+                          FontSize="16">
 
-                    </TextBlock>
+                        </TextBlock>
                 </Border>
                 <!---Description Scroll-->
                 <ScrollViewer Grid.Row="1"
@@ -192,38 +209,36 @@
                                Foreground="{StaticResource PlaceholderText}"
                                Margin="0 20"/>
                 </ScrollViewer>
-                <!---Due Date-->
-                <TextBlock Text="Due: 15/05/2024"
-                           Background="{StaticResource AccentDark}"
-                           Padding="20 3"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Left"   
-                           Grid.Row="2"
-                           Foreground="White"
-                           />
-
-            </Grid>
-            
-            <!---Task View Buttons-->
-            <Grid Grid.Row="2">
-                <Button Style="{StaticResource TaskViewDeleteButton}"
-                        HorizontalAlignment="Left" 
-                        VerticalAlignment="Center"
-                        Content="Delete"
-                        Margin="20 0 0 0"/>
-                <Button Style="{StaticResource TaskViewEditButton}"
-                        HorizontalAlignment="Center" 
-                        VerticalAlignment="Center"  
-                        Content="Edit"/>
-                <Button Style="{StaticResource TaskViewCompleteButton}" 
-                        HorizontalAlignment="Right" 
-                        VerticalAlignment="Center"
-                        Content="Complete"
-                        Margin="0 0 20 0"/>
-
             </Grid>
         </Grid>
+     
+         <!---Due Date-->
+        <TextBlock Text="Due: 15/05/2024"
+                        Background="{StaticResource AccentDark}"
+                        Padding="20 3"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"   
+                        Grid.Row="2"
+                        Foreground="White" />
 
+        <!---Task View Buttons-->
+        <Grid Grid.Row="2">
+            <Button Style="{StaticResource TaskViewDeleteButton}"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center"
+                    Content="Delete"
+                    Margin="20 0 0 0"/>
+            <Button Style="{StaticResource TaskViewEditButton}"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"  
+                    Content="Edit"/>
+            <Button Style="{StaticResource TaskViewCompleteButton}" 
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Center"
+                        Content="Complete"
+                        Margin="0 0 20 0"/>
+        </Grid>
+       
 
         <!--Task stataus bar-->
         <Rectangle Fill="{StaticResource TaskStatusBackground}" 
